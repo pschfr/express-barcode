@@ -1,0 +1,24 @@
+{
+  "name": "express-barcode",
+  "version": "0.0.1",
+  "description": "A test to see if I can get a simpler barcode generator with Express.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pschfr/express-barcode.git"
+  },
+  "keywords": [
+    "express",
+    "barcode",
+    "barcode-generator"
+  ],
+  "author": "Paul Schaefer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pschfr/express-barcode/issues"
+  },
+  "homepage": "https://github.com/pschfr/express-barcode#readme"
+}
