@@ -13,18 +13,15 @@ app.engine('handlebars', handlebars())
 app.set('view engine', 'handlebars')
 // app.use(express.static('static'))
 
-// Data to render in index view. Currently hard-coded,
-// may want to replace with data in a JSON file or a DB.
-const data = {
-  'title': 'Barcode Generator',
-  'source': 'https://github.com/pschfr/express-barcoded/',
-  'description': 'This website is a simple barcode generator, used for DPCIs, backroom locations, cart labels, or whatever you may need!  ',
-}
+// Set local variables
+app.locals.title = 'Barcode Generator'
+app.locals.source = 'https://github.com/pschfr/express-barcoded/'
+app.locals.description = 'This website is a simple barcode generator, used for DPCIs, backroom locations, cart labels, or whatever you may need!'
 
 // Render views
 app.get('/', (req, res) => {
   console.log('rendering index')
-  res.render('index', data)
+  res.render('index', req.app.locals)
 })
 
 // Starts app on proper port
