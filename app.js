@@ -12,7 +12,7 @@ const port = process.env.PORT ? process.env.PORT : '8080'
 // Enable handlebars
 app.engine('handlebars', handlebars())
 app.set('view engine', 'handlebars')
-// app.use(express.static('static'))
+app.use(express.static('static'))
 
 // Set local variables
 app.locals.title = 'Barcode Generator'
@@ -23,6 +23,7 @@ app.locals.description = 'This website is a simple barcode generator, used for D
 app.locals.team_member_number = process.env.TEAM_MEMBER_NUMBER
 app.locals.team_member_password = process.env.TEAM_MEMBER_PASSWORD
 app.locals.cart_label = process.env.CART_LABEL
+app.locals.location = process.env.LOCATION
 
 // Render views
 app.get('/', (req, res) => {
