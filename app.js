@@ -1,4 +1,5 @@
 // Require dependencies
+const dotenv = require('dotenv').config()
 const express = require('express')
 const handlebars = require('express-handlebars')
 
@@ -15,12 +16,17 @@ app.set('view engine', 'handlebars')
 
 // Set local variables
 app.locals.title = 'Barcode Generator'
-app.locals.source = 'https://github.com/pschfr/express-barcoded/'
+app.locals.source = 'https://github.com/pschfr/express-barcode/'
 app.locals.description = 'This website is a simple barcode generator, used for DPCIs, backroom locations, cart labels, or whatever you may need!'
+
+// Passes through the environment variables
+app.locals.team_member_number = process.env.TEAM_MEMBER_NUMBER
+app.locals.team_member_password = process.env.TEAM_MEMBER_PASSWORD
+app.locals.cart_label = process.env.CART_LABEL
 
 // Render views
 app.get('/', (req, res) => {
-  console.log('rendering index')
+  console.log(`rendering ${req.url}`)
   res.render('index', req.app.locals)
 })
 
