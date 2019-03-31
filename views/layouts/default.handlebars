@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{{title}}</title>
+		<meta name="description" content="{{ description }}">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tachyons/4.11.1/tachyons.min.css">
+	</head>
+	<body class="sans-serif tc lh-copy flex flex-column items-center justify-around min-vh-100 mh2">
+		<header>
+			<h1>{{ title }}</h1>
+		</header>
+		{{{ body }}}
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jsbarcode/3.11.0/JsBarcode.all.min.js" integrity="sha256-BjqnfACYltVzhRtGNR2C4jB9NAN0WxxzECeje7/XpwE=" crossorigin="anonymous"></script>
+		<script src="js/index.js"></script>
+	</body>
+</html>

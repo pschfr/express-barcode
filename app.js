@@ -14,6 +14,9 @@ app.engine('handlebars', handlebars())
 app.set('view engine', 'handlebars')
 app.use(express.static('static'))
 
+// Sets views/layout/default as default layout
+app.locals.layout = 'default'
+
 // Set local variables
 app.locals.title = 'Barcode Generator'
 app.locals.source = 'https://github.com/pschfr/express-barcode/'
@@ -32,5 +35,4 @@ app.get('/', (req, res) => {
 })
 
 // Starts app on proper port
-app.listen(port, () => console.log(`The app is now listening on port ${port}!`))
-
+app.listen(port, () => console.log(`The app is now listening on http://localhost:${port}`))
